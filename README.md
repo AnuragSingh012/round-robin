@@ -1,54 +1,29 @@
-# React + TypeScript + Vite
+# 🏷️ Round-Robin Coupon Distribution with Abuse Prevention
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
+This web application distributes coupons to guest users in a **round-robin manner** while incorporating **abuse prevention mechanisms** to prevent users from exploiting page refreshes to claim multiple coupons within a restricted time frame.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Round-Robin Coupon Distribution:** Ensures fair coupon assignment by distributing them sequentially.
+- **Guest Access:** Users can claim coupons without needing an account or login.
+- **Abuse Prevention Mechanisms:**
+  - **IP Tracking:** Prevents multiple claims from the same IP within a specified time frame.
+  - **Cookie Tracking:** Detects multiple claims from the same browser session.
+  - **Rate Limiting:** Restricts rapid repeated requests to prevent spam.
+- **User Feedback:** Provides clear messages indicating claim success or cooldown time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Setup Instructions
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### **1️⃣ Clone the Repository**
+```sh
+git clone https://github.com/AnuragSingh012/round-robin.git
+cd round-robin
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### **2️⃣ Install Dependencies and Start the Application**
+```sh
+npm install
+npm run dev
 ```
